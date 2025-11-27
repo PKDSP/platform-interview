@@ -3,6 +3,8 @@
 
 Vagrant.configure("2") do |config|
 
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.synced_folder "tf" , "/home/vagrant/"
   def running_rosetta()
     !`sysctl -in sysctl.proc_translated`.strip().to_i.zero?
   end
@@ -35,7 +37,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :docker
   config.vm.define "f3-interview"
   config.vm.hostname = "f3-interview"
-  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".git/"
+  config.vm.synced_folder ".", "/vagrant", rsync__exclude: ".git/"
   config.vm.boot_timeout = 300
 
   config.vm.provision :shell,
