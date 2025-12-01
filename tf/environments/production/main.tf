@@ -29,7 +29,7 @@ module "common" {
   microservice_env_name = local.environment
 }
 
-# 5. Storing terraform state in local for dev enviornment #########################
+# 5. Storing terraform state remote location s3 bucket for prod enviornment. But for this taks we are going to store this in local #########################
 terraform {
   backend "local" {
     path = "../../terraform-production.tfstate"
