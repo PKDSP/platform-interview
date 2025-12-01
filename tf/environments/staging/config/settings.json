@@ -1,0 +1,44 @@
+{
+  "vault": {
+    "address": "http://localhost:8401",
+    "token": "083672fc-4471-4ec4-9b59-a285e463a973",
+    "port": 8401,
+    "env_name": "staging",
+    "network": "vagrant_staging",
+    "vault_alias": "vault_stage",
+    "version": "rc"
+  },
+  "services": {
+    "account": {
+      "image": "form3tech-oss/platformtest-account",
+      "port": 8081,
+      "username": "account",
+      "password": "396e73e7-34d5-4b0a-ae1b-b128aa7f9977",
+      "version": "rc"
+    },
+    "gateway": {
+      "image": "form3tech-oss/platformtest-gateway",
+      "port": 8082,
+      "username": "gateway",
+      "password": "33fc0cc8-b0e3-4c06-8cf6-c7dce2705329",
+      "version": "rc"
+    },
+    "payment": {
+      "image": "form3tech-oss/platformtest-payment",
+      "port": 8083,
+      "username": "payment",
+      "password": "821462d7-47fb-402c-a22a-a58867602e39",
+      "version": "rc"
+    }
+  },
+  "frontend": {
+    "image": "docker.io/nginx:1.22.0-alpine",
+    "version": "rc",
+    "external_ports": {
+      "development": 4080,
+      "staging": 4082,
+      "production": 4081
+    },
+    "internal_port": 80
+  }
+}
