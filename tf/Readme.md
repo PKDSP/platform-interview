@@ -269,13 +269,9 @@ For a real production environment, the following non-Terraform aspects are manda
 ### 2. Stability & State Management
 - Remote State/Locking: Configure a robust remote backend (S3, GCS, etc.) with State Locking to prevent concurrent state file corruption.
 
-- Environment Isolation: Use separate cloud accounts/projects for Development, Staging, and Production to prevent accidental cross-environment impact.
-
-- Drift Detection: Implement external tooling (Driftctl) to monitor live infrastructure and alert if manual changes occur outside of Terraform.
-
 ### 3. Scalability & Monitoring
 - Orchestration: Migrate from basic docker_container resources to a platform like Kubernetes (EKS/AKS/GKE) or AWS ECS/Fargate.
 
-- Observability: Implement centralized logging and monitoring (ELK/Splunk) and stream Vault Audit Logs off the local filesystem for compliance.
+- Observability: Implement centralized logging and monitoring (ELK/DataDog) and stream Vault Audit Logs off the local filesystem for compliance.
 
 - Testing: Integrate Terratest or similar frameworks to run functional tests against test-deployed infrastructure before promoting changes.
