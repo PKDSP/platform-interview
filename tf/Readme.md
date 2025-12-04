@@ -198,7 +198,7 @@ terraform apply
 - Consistency: Enforces a standard structure across all environments.
 
 
-## How code would fit into a CI/CD pipeline(Pipeline Integration).
+##  How code would fit into a CI/CD pipeline(Pipeline Integration).
 
 The pipeline is triggered based on the branch pushed. It automatically selects the correct environments/ directory to run Terraform commands, ensuring clear separation of environments.
 
